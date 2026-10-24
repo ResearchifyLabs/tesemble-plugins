@@ -62,7 +62,7 @@
             },
             {
               "description": "Draft message variants",
-              "prompt": "Write two alternative versions of this cold email opener without running a simulation: \"Most founders guess which message will work. You don't have to.\"",
+              "prompt": "Use Tesemble to write two alternative versions of this cold email opener without running a simulation: \"Most founders guess which message will work. You don't have to.\"",
               "tools_triggered": "tesemble_suggest_draft_variants",
               "expected_behavior": "Return two rewrites with 0 credits charged."
             },
