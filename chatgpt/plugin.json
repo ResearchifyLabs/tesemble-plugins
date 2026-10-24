@@ -57,9 +57,9 @@
             },
             {
               "description": "Run ICP discovery on a pitch",
-              "prompt": "Run a Tesemble ICP discovery on this pitch: \"Test your GTM messaging on thousands of synthetic buyers before you spend on ads.\" Keep it to about 20 personas and tell me the credit cost before you run it.",
+              "prompt": "Run a Tesemble ICP discovery on this pitch: \"Test your GTM messaging on thousands of synthetic buyers before you spend on ads.\" Use at most 1,000 personas and tell me the credit cost before you run it.",
               "tools_triggered": "tesemble_get_me,tesemble_suggest_audience,tesemble_run_icp_discovery,tesemble_get_insights",
-              "expected_behavior": "Show the persona grid and estimated cost (about 20 credits), run after the user confirms, then summarize which segments responded best."
+              "expected_behavior": "Show the persona grid (at most 1,000 personas) and its credit cost (1 credit per persona, so at most 1,000 credits), run after the user confirms, then summarize which segments responded best."
             },
             {
               "description": "Draft message variants",
