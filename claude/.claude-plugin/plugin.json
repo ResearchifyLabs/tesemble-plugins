@@ -1,0 +1,16 @@
+{
+  "name": "tesemble",
+  "displayName": "Tesemble",
+  "version": "1.0.0",
+  "description": "Run GTM and ICP simulations against a synthetic persona grid via the Tesemble MCP server.",
+  "author": {
+    "name": "SecureText Research Labs Private Limited",
+    "email": "care@researchify.io",
+    "url": "https://www.tesemble.com"
+  },
+  "homepage": "https://www.tesemble.com/blog/connect-tesemble-mcp",
+  "repository": "https://github.com/ResearchifyLabs/tesemble-plugins",
+  "license": "Proprietary",
+  "keywords": ["gtm", "sales", "marketing", "icp", "product-brainstorming", "simulation"],
+  "mcpServers": "./.mcp.json"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "tesemble",
+  "owner": {
+    "name": "SecureText Research Labs Private Limited",
+    "email": "care@researchify.io"
+  },
+  "metadata": {
+    "description": "Tesemble plugins for testing GTM messaging against a synthetic persona grid."
+  },
+  "plugins": [
+    {
+      "name": "tesemble",
+      "source": "./claude",
+      "description": "Run GTM and ICP simulations against a synthetic persona grid via the Tesemble MCP server."
+    }
+  ]
+}

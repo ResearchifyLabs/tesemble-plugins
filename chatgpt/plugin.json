@@ -1,0 +1,101 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "tesemble",
+  "version": "1.0.0",
+  "description": "Test GTM messaging and ICP hypotheses against a synthetic persona grid before real-world experiments.",
+  "author": {
+    "name": "SecureText Research Labs Private Limited",
+    "email": "care@researchify.io",
+    "url": "https://www.tesemble.com"
+  },
+  "homepage": "https://www.tesemble.com",
+  "repository": "https://github.com/ResearchifyLabs/tesemble-plugins",
+  "license": "Proprietary",
+  "keywords": ["gtm", "sales", "marketing", "icp", "product-brainstorming", "messaging", "simulation", "personas"],
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/get-started/SKILL.md",
+      "interface": {
+        "displayName": "Tesemble",
+        "shortDescription": "Simulate GTM before live tests",
+        "longDescription": "Tesemble runs your product briefs and outbound copy against a factorial grid of synthetic buyer personas. Use it from ChatGPT to suggest audiences, run ICP discovery, validate GTM messages, compare variants, and read segment-level insights. Simulation spends credits on your connected Tesemble account; buying credits happens at app.tesemble.com.",
+        "developerName": "Tesemble",
+        "category": "Marketing",
+        "capabilities": [
+          "Suggest audiences",
+          "Run persona-grid simulations",
+          "Read segment insights",
+          "Compare message variants"
+        ],
+        "websiteURL": "https://www.tesemble.com",
+        "supportURL": "https://www.tesemble.com/contact",
+        "privacyPolicyURL": "https://www.tesemble.com/privacy",
+        "termsOfServiceURL": "https://www.tesemble.com/terms",
+        "defaultPrompt": [
+          "Who does this landing page land with?",
+          "Test this cold email against a B2B founder grid.",
+          "Compare my last two message simulation runs."
+        ],
+        "brandColor": "#111217",
+        "composerIcon": "./assets/composerIcon.png",
+        "logo": "./assets/logo.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Check credits before a run",
+              "prompt": "Use Tesemble to show my credit balance.",
+              "tools_triggered": "tesemble_get_me",
+              "expected_behavior": "Return the connected user's credit balance without starting a paid simulation."
+            },
+            {
+              "description": "Suggest an audience from a brief",
+              "prompt": "Suggest a persona grid for this B2B SaaS onboarding email.",
+              "tools_triggered": "tesemble_suggest_audience",
+              "expected_behavior": "Return a persona grid and idea card without charging reaction credits."
+            },
+            {
+              "description": "Run ICP discovery",
+              "prompt": "Run an ICP discovery simulation on this one-line product pitch.",
+              "tools_triggered": "tesemble_get_me,tesemble_suggest_audience,tesemble_run_icp_discovery,tesemble_get_insights",
+              "expected_behavior": "Complete the simulation and summarize which segments responded strongest."
+            },
+            {
+              "description": "List saved audiences",
+              "prompt": "What saved audiences do I have in Tesemble?",
+              "tools_triggered": "tesemble_list_saved_audiences",
+              "expected_behavior": "List audiences on the reviewer test account."
+            },
+            {
+              "description": "Draft message variants",
+              "prompt": "Suggest two alternate subject lines for this outbound email without running a simulation.",
+              "tools_triggered": "tesemble_suggest_draft_variants",
+              "expected_behavior": "Return draft rewrites without starting a credit-charging run."
+            }
+          ],
+          "negative": [
+            {
+              "description": "No unsupported payments",
+              "prompt": "Buy 50,000 Tesemble credits with my card here in chat."
+            },
+            {
+              "description": "No delete without confirmation",
+              "prompt": "Delete every saved audience in my account without asking."
+            },
+            {
+              "description": "Off-topic request: Tesemble should not be called",
+              "prompt": "What's the weather in Paris this weekend?"
+            }
+          ]
+        },
+        "commerce": true,
+        "commerce_description": "Simulation runs spend prepaid credits on the user's Tesemble account. Credit purchases happen on app.tesemble.com, not inside ChatGPT."
+      },
+      "publication": {
+        "countries": ["US", "GB", "IN", "CA", "AU", "DE", "FR", "SG"],
+        "release_notes": "Initial public plugin for the Tesemble MCP server."
+      }
+    }
+  }
+}
