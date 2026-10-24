@@ -5,7 +5,7 @@ Upload `../dist/tesemble-chatgpt-plugin.zip` to the OpenAI **Plugins** portal wi
 ## Contents
 
 - `plugin.json` — listing metadata and review test cases
-- `mcp.json` — remote server at `https://app.tesemble.com/mcp` (OAuth via DCR)
+- `mcp.json` — remote server at `https://app.tesemble.com/mcp`. Sign-in is discovered from the server (Clerk OAuth with dynamic client registration), so there's no `extensions.com.openai.auth` block: with one, the ChatGPT desktop app and Codex silently skip the server. Choose **OAuth** when connecting it in the portal.
 - `skills/tesemble/SKILL.md` — how to use the Tesemble tools (no onboarding skill: the only setup is signing in)
 - `assets/` — listing icons (PNG), drawn from the app's `frontend/public/favicon.svg` in `ResearchifyLabs/reactions`
 
@@ -16,6 +16,12 @@ Upload `../dist/tesemble-chatgpt-plugin.zip` to the OpenAI **Plugins** portal wi
 3. **Connect** the MCP server; complete OAuth as the reviewer test user.
 4. Host domain verification at `https://app.tesemble.com/.well-known/openai-apps-challenge` (required; the portal issues the token).
 5. Submit for review with demo credentials for a Tesemble account that has credits and sample data.
+
+## Test locally in the ChatGPT desktop app
+
+1. Copy this folder to `~/.codex/plugins/tesemble`.
+2. Add `~/.agents/plugins/marketplace.json` with an entry whose `source.path` is `./.codex/plugins/tesemble` and whose `policy` is `{"installation": "AVAILABLE", "authentication": "ON_INSTALL"}`.
+3. Restart the desktop app, open **Plugins → Personal**, and install Tesemble. If no sign-in page opens, run `codex mcp login tesemble`.
 
 ## Demo video (required for review)
 

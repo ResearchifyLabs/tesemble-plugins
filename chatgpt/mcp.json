@@ -3,17 +3,7 @@
   "mcpServers": {
     "tesemble": {
       "type": "streamable-http",
-      "url": "https://app.tesemble.com/mcp",
-      "extensions": {
-        "com.openai": {
-          "auth": {
-            "type": "oauth",
-            "client": {
-              "mode": "dcr"
-            }
-          }
-        }
-      }
+      "url": "https://app.tesemble.com/mcp"
     }
   }
 }

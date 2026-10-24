@@ -19,7 +19,7 @@
         "shortDescription": "Simulate GTM before live tests",
         "longDescription": "Tesemble runs your product briefs and outbound copy against a factorial grid of synthetic buyer personas. Use it from ChatGPT to suggest audiences, run ICP discovery, validate GTM messages, compare variants, and read segment-level insights. Simulation spends credits on your connected Tesemble account; buying credits happens at app.tesemble.com.",
         "developerName": "Tesemble",
-        "category": "Marketing",
+        "category": "Business & Operations",
         "capabilities": [
           "Suggest audiences",
           "Run persona-grid simulations",
