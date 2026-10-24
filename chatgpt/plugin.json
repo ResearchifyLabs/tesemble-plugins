@@ -47,45 +47,45 @@
               "description": "Check credits before a run",
               "prompt": "Use Tesemble to show my credit balance.",
               "tools_triggered": "tesemble_get_me",
-              "expected_behavior": "Return the connected user's credit balance without starting a paid simulation."
+              "expected_behavior": "Return the connected user's credit balance without spending credits."
             },
             {
-              "description": "Suggest an audience from a brief",
-              "prompt": "Suggest a persona grid for this B2B SaaS onboarding email.",
+              "description": "Suggest an audience from a website",
+              "prompt": "Who is https://www.tesemble.com for? Suggest a Tesemble persona grid, but don't run a simulation yet.",
               "tools_triggered": "tesemble_suggest_audience",
-              "expected_behavior": "Return a persona grid and idea card without charging reaction credits."
+              "expected_behavior": "Return a persona grid and idea card with 0 credits charged."
             },
             {
-              "description": "Run ICP discovery",
-              "prompt": "Run an ICP discovery simulation on this one-line product pitch.",
+              "description": "Run ICP discovery on a pitch",
+              "prompt": "Run a Tesemble ICP discovery on this pitch: \"Test your GTM messaging on thousands of synthetic buyers before you spend on ads.\" Keep it to about 20 personas and tell me the credit cost before you run it.",
               "tools_triggered": "tesemble_get_me,tesemble_suggest_audience,tesemble_run_icp_discovery,tesemble_get_insights",
-              "expected_behavior": "Complete the simulation and summarize which segments responded strongest."
-            },
-            {
-              "description": "List saved audiences",
-              "prompt": "What saved audiences do I have in Tesemble?",
-              "tools_triggered": "tesemble_list_saved_audiences",
-              "expected_behavior": "List audiences on the reviewer test account."
+              "expected_behavior": "Show the persona grid and estimated cost (about 20 credits), run after the user confirms, then summarize which segments responded best."
             },
             {
               "description": "Draft message variants",
-              "prompt": "Suggest two alternate subject lines for this outbound email without running a simulation.",
+              "prompt": "Write two alternative versions of this cold email opener without running a simulation: \"Most founders guess which message will work. You don't have to.\"",
               "tools_triggered": "tesemble_suggest_draft_variants",
-              "expected_behavior": "Return draft rewrites without starting a credit-charging run."
+              "expected_behavior": "Return two rewrites with 0 credits charged."
+            },
+            {
+              "description": "Write messages for the best segment of the latest run",
+              "prompt": "In my most recent Tesemble run, which segment responded best? Write two messages aimed at that segment.",
+              "tools_triggered": "tesemble_list_experiments,tesemble_list_runs,tesemble_get_insights,tesemble_suggest_cohort_gtm_messages",
+              "expected_behavior": "Name the top segment from the latest completed run and write two messages for it without spending simulation credits."
             }
           ],
           "negative": [
             {
-              "description": "No unsupported payments",
+              "description": "Off-topic request: Tesemble should not be called",
+              "prompt": "What's the weather in Paris this weekend?"
+            },
+            {
+              "description": "Credit purchase: there is no purchase tool, so ChatGPT should point the user to app.tesemble.com",
               "prompt": "Buy 50,000 Tesemble credits with my card here in chat."
             },
             {
-              "description": "No delete without confirmation",
-              "prompt": "Delete every saved audience in my account without asking."
-            },
-            {
-              "description": "Off-topic request: Tesemble should not be called",
-              "prompt": "What's the weather in Paris this weekend?"
+              "description": "Sending email: Tesemble tests messages but does not send them, so it should not claim to send anything",
+              "prompt": "Send this cold email to my 500 leads: \"Stop guessing which message works.\""
             }
           ]
         },
