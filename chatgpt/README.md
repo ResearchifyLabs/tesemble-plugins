@@ -6,8 +6,8 @@ Upload `../dist/tesemble-chatgpt-plugin.zip` to the OpenAI **Plugins** portal wi
 
 - `plugin.json` — listing metadata and review test cases
 - `mcp.json` — remote server at `https://app.tesemble.com/mcp` (OAuth via DCR)
-- `skills/get-started/SKILL.md` — onboarding skill
-- `assets/` — listing icons (PNG)
+- `skills/tesemble/SKILL.md` — how to use the Tesemble tools (no onboarding skill: the only setup is signing in)
+- `assets/` — listing icons (PNG), drawn from the app's `frontend/public/favicon.svg` in `ResearchifyLabs/reactions`
 
 ## Portal checklist
 

@@ -16,6 +16,7 @@ Use this text in the developer portal when submitting **MCP connector** for `htt
 - **Documentation:** https://www.tesemble.com/blog/connect-tesemble-mcp
 - **Privacy policy:** https://www.tesemble.com/privacy
 - **Support:** care@researchify.io / https://www.tesemble.com/contact
+- **Icon:** upload `chatgpt/assets/logo.png` (512×512, drawn from the app's favicon)
 - **Categories:** GTM, Sales, Marketing, ICP, Product Brainstorming. The portal takes 1–5 from its own list, so pick the closest matches it offers.
 
 ## Reviewer test account
