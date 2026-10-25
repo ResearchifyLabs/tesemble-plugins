@@ -88,6 +88,7 @@
             }
           ]
         },
+        "demo_recording_url": "https://app.trupeer.ai/view/2lzWYUE0B/tesemble-chat-gpt-plugin-test-cases",
         "commerce": true,
         "commerce_description": "Simulation runs spend prepaid credits on the user's Tesemble account. Credit purchases happen on app.tesemble.com, not inside ChatGPT."
       },
